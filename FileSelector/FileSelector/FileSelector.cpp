@@ -81,7 +81,7 @@ bool FilePath::fileExists()
     return std::filesystem::exists(getFilepath()) && std::filesystem::is_regular_file(getFilepath());
 }
 
-// class FileSelector --------------------------------------------------
+// class FileSelector --------------------------------------
 
 
 void FileSelector::setExtension(const std::string& ext)
@@ -203,8 +203,8 @@ bool FileSelector::folderOk()
 
 void FileSelector::enumerateFiles()
 {
-    if(std::filesystem::is_empty(std::filesystem::path(m_folder)))
-        std::cout << " la directory selezionata è vuota" << std::endl;
+   m_files.clear(); if(std::filesystem::is_empty(std::filesystem::path(m_folder)))
+        std::cout << " la directory selezionata Ã¨ vuota" << std::endl;
     else
     {
         for (auto const& file : std::filesystem::directory_iterator{ m_folder })
