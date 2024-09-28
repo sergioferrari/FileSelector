@@ -203,7 +203,8 @@ bool FileSelector::folderOk()
 
 void FileSelector::enumerateFiles()
 {
-   m_files.clear(); if(std::filesystem::is_empty(std::filesystem::path(m_folder)))
+    m_files.clear(); 
+    if(std::filesystem::is_empty(std::filesystem::path(m_folder)))
         std::cout << " la directory selezionata è vuota" << std::endl;
     else
     {
